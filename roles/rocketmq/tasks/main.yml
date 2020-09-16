@@ -1,0 +1,79 @@
+# prepare installation
+- name: rm -rf /data/wwwroot/rocketmq for second installation
+  shell: rm -rf /data/wwwroot/rocketmq
+
+# download rocketmq  
+- name: Download rocketmq
+  unarchive:
+    src: "{{rocketmq_download_url}}"
+    dest: /data/wwwroot
+    remote_src: yes
+    mode: 0750
+    
+- name: Rename dir name and Setting environment
+  shell: |
+    cd /data/wwwroot; if [ ! -d "rocketmq" ]; then mv rocketmq-* rocketmq; fi
+    export NAMESRV_ADDR=localhost:9876
+
+- name: Change runserver.sh file 
+  lineinfile:
+    dest: /data/wwwroot/rocketmq/bin/runserver.sh
+    regexp: '.* -server -Xms4g -Xmx4g -Xmn2g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m.*'
+    line: 'JAVA_OPT="${JAVA_OPT} -server -Xms256m -Xmx256m -Xmn125m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"'
+    backrefs: yes 
+
+- name: Change runbroker.sh file 
+  lineinfile:
+    dest:  /data/wwwroot/rocketmq/bin/runbroker.sh
+    regexp: '.* -server -Xms8g -Xmx8g -Xmn4g.*'
+    line:  'JAVA_OPT="${JAVA_OPT} -server -Xms256m -Xmx256m -Xmn125m"'
+    backrefs: yes   
+
+- name: Configuration RocketMQ Name Server
+  copy:
+    src: mqnamesrv.service
+    dest: '/lib/systemd/system/mqnamesrv.service'
+
+- name: Configuration RocketMQ Broker Server
+  copy:
+    src: mqbroker.service
+    dest: '/lib/systemd/system/mqbroker.service'
+
+- name: Start and Enable  RocketMQ Name Server
+  service:
+    name: mqnamesrv
+    state: started 
+    enabled: yes
+
+- name: Start and Enable  RocketMQ Broker Server
+  service:
+    name: mqbroker
+    state: started
+    enabled: yes
+    
+- name: Start RocketMQ-Console container
+  shell: |
+    ip=$(ip addr |grep inet |grep -v inet6 |grep eth0|awk '{print $2}' |awk -F "/" '{print $1}')
+    docker pull styletang/rocketmq-console-ng 
+    docker run --name=rocketmq_console -d \
+    -e "JAVA_OPTS=-Drocketmq.namesrv.addr=$ip:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false" \
+    -p {{rockermq_container_port}}:8080  --restart=always -t docker.io/styletang/rocketmq-console-ng  
+    
+# Check version,
+# must use sudo sh -c to solve the no-root permission
+- block:
+  - name: Check RocketMQ Version
+    shell: sudo sh -c "echo 'no method for rocketchat version' 1>> /data/logs/install_version.txt"
+
+# check service state
+- name: Check mqnamesrv Service
+  shell: systemctl status mqnamesrv | grep Active*
+  register: check_mqnamesrv_service
+  notify: check_mqnamesrv_service
+
+- name: Check mqbroker Service
+  shell: systemctl status mqbroker | grep Active*
+  register: check_mqbroker_service
+  notify: check_mqbroker_service
+
+

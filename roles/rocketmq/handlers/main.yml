@@ -1,0 +1,7 @@
+- name: check_mqnamesrv_service
+  debug:
+    var: check_mqnamesrv_service.stdout
+
+- name: check_mqbroker_service
+  debug:
+    var: check_mqbroker_service.stdout

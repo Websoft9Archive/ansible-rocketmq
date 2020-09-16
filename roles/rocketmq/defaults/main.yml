@@ -1,0 +1,4 @@
+# 此处应选择二进制文件
+rocketmq_download_url: "https://mirrors.tuna.tsinghua.edu.cn/apache/rocketmq/4.7.1/rocketmq-all-4.7.1-bin-release.zip" 
+
+rockermq_container_port: 9010

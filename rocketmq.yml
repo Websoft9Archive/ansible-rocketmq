@@ -1,0 +1,18 @@
+  
+# 核心任务
+
+- name: RocketMQ
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - { role: role_common, tags: "role_common"} 
+    - { role: role_jdk, tags: "role_jdk"} 
+    - { role: role_docker, tags: "role_docker"}
+    - { role: rocketmq, tags: "rocketmq"}
+    - { role: role_preend, tags: "role_preend"}
+    - { role: role_end, tags: "role_end"}

@@ -1,0 +1,9 @@
+[Unit]
+Description=RocketMQ Broker Server
+After=network.target
+[Service]
+Type=simple
+ExecStart=/data/wwwroot/rocketmq/bin/mqbroker -n localhost:9876 
+ExecStop=/data/wwwroot/rocketmq/bin/mqshutdown broker
+[Install]
+WantedBy=multi-user.target
