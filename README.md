@@ -15,7 +15,7 @@
 | 私有云|  KVM, VMware, VirtualBox, OpenStack | 可选 |
 | 服务器配置 | 最低2核16G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
 
-更多要求请参考[官方安装文档](http://rocketmq.apache.org/docs/quick-start/)
+更多配置要求请参考[官方文档](http://rocketmq.apache.org/docs/quick-start/)
 
 ## 组件
 
@@ -31,7 +31,7 @@
 rocketmq_download_url: "https://archive.apache.org/dist/rocketmq/4.7.0/rocketmq-all-4.7.0-bin-release.zip"
 ```
 
-如果你发现不是最新版本，请到 [RocketMQ Releases页面](https://github.com/apache/rocketmq/releases)获取最新版二进制下载链接，再修改 [main.yml](/roles/rocketmq/defaults/main.yml) 中的 ```rocketmq_download_url``` 变量值即可安装最新版 RocketMQ。  
+如果你发现不是最新版本，请到 [RocketMQ Releases页面](http://rocketmq.apache.org/dowloading/releases/)获取最新版二进制下载链接，再修改 [main.yml](/roles/rocketmq/defaults/main.yml) 中的 ```rocketmq_download_url``` 变量值即可安装最新版 RocketMQ。  
 
 ## 安装指南
 
