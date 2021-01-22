@@ -63,7 +63,7 @@
 # must use sudo sh -c to solve the no-root permission
 - block:
   - name: Check RocketMQ Version
-    shell: sudo sh -c "echo 'no method for rocketchat version' 1>> /data/logs/install_version.txt"
+    shell: sudo sh -c "echo 'no method for rocketmq version' 1>> /data/logs/install_version.txt"
 
 # check service state
 - name: Check mqnamesrv Service
