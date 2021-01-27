@@ -1,4 +1,0 @@
-# 保存当前roles和其他roles依赖
-
-#dependencies:
-#  - {role: apache}
