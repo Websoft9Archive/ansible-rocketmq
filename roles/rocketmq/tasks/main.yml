@@ -9,7 +9,11 @@
     dest: /data/wwwroot
     remote_src: yes
     mode: 0750
-    
+
+- name: Get rocketmq version
+  shell: ls /data/wwwroot/ |grep rocketmq |cut -d- -f 3
+  register: rocketmq_version
+
 - name: Rename dir name and Setting environment
   shell: |
     cd /data/wwwroot; if [ ! -d "rocketmq" ]; then mv rocketmq-* rocketmq; fi
@@ -51,19 +55,23 @@
     state: started
     enabled: yes
     
-- name: Start RocketMQ-Console container
-  shell: |
-    ip=172.17.0.1
-    docker pull styletang/rocketmq-console-ng 
-    docker run --name=rocketmq_console -d \
-    -e "JAVA_OPTS=-Drocketmq.namesrv.addr=$ip:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false" \
-    -p {{rockermq_container_port}}:8080  --restart=always -t docker.io/styletang/rocketmq-console-ng  
-    
+- name: Create link  
+  file:
+    src: '{{item.src}}'
+    dest: '{{item.dest}}'
+    state: link
+  with_items:
+    - {src: /data/wwwroot/rocketmq/bin/mqadmin,dest: /usr/bin/mqadmin}
+    - {src: ~/logs/rocketmqlogs/,dest: /data/logs/rocketmq/}
+    - {src: /data/wwwroot/rocketmq/conf/,dest: /data/config/rocketmq}
+    - {src: /data/wwwroot/rocketmq/bin/runserver.sh,dest: /data/config/rocketmq/runserver.sh}
+    - {src: /data/wwwroot/rocketmq/bin/runbroker.sh,dest: /data/config/rocketmq/runbroker.sh}
+
 # Check version,
 # must use sudo sh -c to solve the no-root permission
 - block:
   - name: Check RocketMQ Version
-    shell: sudo sh -c "echo 'no method for rocketmq version' 1>> /data/logs/install_version.txt"
+    shell: sudo echo "rocketmq version:" "{{rocketmq_version.stdout}}" |sudo tee -a /data/logs/install_version.txt"
 
 # check service state
 - name: Check mqnamesrv Service
