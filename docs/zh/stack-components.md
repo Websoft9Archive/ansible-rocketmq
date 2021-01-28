@@ -11,15 +11,15 @@ RocketMQ 预装包包含 RocketMQ 运行所需一序列支撑软件（简称为�
 ### RocketMQ
 
 RocketMQ 安装目录： */data/wwwroot/rocketmq*  
-RocketMQ 日志目录： */data/logs/rocketmq*
+RocketMQ 日志目录： */data/logs/rocketmq*  
 RocketMQ 配置文件： */data/config/rocketmq*
 
 ### RocketMQ-Console-Ng
 
 RocketMQ-Console-Ng 是一款可视化 RocketMQ 管理工具，在本项目中它基于 Docker 安装。  
 
-rocketmq-console-ng directory：*/data/apps/rocketmq-console-ng*  
-rocketmq-console-ng docker compose file：*/data/apps/rocketmq-console-ng/docker-compose.yml* 
+安装目录：*/data/apps/rocketmq-console-ng*  
+Compose文件：*/data/apps/rocketmq-console-ng/docker-compose.yml* 
 
 ### Docker
 

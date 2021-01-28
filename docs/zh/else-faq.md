@@ -19,7 +19,7 @@
 
 #### 是否有可视化的管理工具？
 
-有，内置RocketMQ-Console-Ng，访问地址：*http://服务器公网IP:9095*
+有，内置RocketMQ-Console-Ng，访问地址：*http://服务器公网IP:9003*
 
 #### 是否可以修改RocketMQ的源码路径？
 

@@ -28,7 +28,7 @@
 本项目通过下载 RocketMQ 二进制发行版进行安装，下载链接存储在：[role/rocketmq/default/main.yml](/roles/rocketmq/defaults/main.yml)。我们会定期检查并测试官方版本的可用性，尽可能保证用户可以顺利安装最新版。
 
 ```
-rocketmq_download_url: "https://archive.apache.org/dist/rocketmq/4.7.0/rocketmq-all-4.7.0-bin-release.zip"
+rocketmq_download_url: "https://archive.apache.org/dist/rocketmq/4.8.0/rocketmq-all-4.8.0-bin-release.zip"
 ```
 
 如果你发现不是最新版本，请到 [RocketMQ Releases页面](http://rocketmq.apache.org/dowloading/releases/)获取最新版二进制下载链接，再修改 [main.yml](/roles/rocketmq/defaults/main.yml) 中的 ```rocketmq_download_url``` 变量值即可安装最新版 RocketMQ。  
