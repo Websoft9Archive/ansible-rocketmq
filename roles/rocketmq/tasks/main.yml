@@ -71,7 +71,7 @@
 # must use sudo sh -c to solve the no-root permission
 - block:
   - name: Check RocketMQ Version
-    shell: sudo echo "rocketmq version:" "{{rocketmq_version.stdout}}" |sudo tee -a /data/logs/install_version.txt"
+    shell: sudo echo "rocketmq version:" "{{rocketmq_version.stdout}}" |sudo tee -a /data/logs/install_version.txt
 
 # check service state
 - name: Check mqnamesrv Service
