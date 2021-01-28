@@ -6,3 +6,15 @@ docker_applications:
   - rocketmqconsole
 
 docker_apps_rocketmqconsole_port: 9003
+
+nginx_htpasswd: True
+
+nginx_reverse_proxy_port: 9003
+
+init_application:
+  nginx:
+    username: "admin"
+    password: "admin"
+    commands: 
+      - htpasswd -b /etc/nginx/.htpasswd admin $new_password
+      - systemctl restart nginx

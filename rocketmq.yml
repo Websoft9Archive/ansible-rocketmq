@@ -14,5 +14,6 @@
     - { role: role_jdk, tags: "role_jdk"} 
     - { role: role_docker, tags: "role_docker"}
     - { role: rocketmq, tags: "rocketmq"}
+    - { role: role_nginx, tags: "role_nginx"}
     - { role: role_preend, tags: "role_preend"}
     - { role: role_end, tags: "role_end"}
