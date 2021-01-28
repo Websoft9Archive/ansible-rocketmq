@@ -9,11 +9,7 @@
 
 采用二进制包解压的安装方式
 
-#### 是否可以通过命令行修改RocketMQ后台密码？TODO
-
-可以，`rabbitmqctl change_password  admin newpassword`
-
-#### 数据库 root 用户对应的密码是多少？TODO
+#### RocketMQ-Console-Ng 管理员用户对应的密码是多少？
 
 密码存放在服务器相关文件中：`/credentials/password.txt`
 

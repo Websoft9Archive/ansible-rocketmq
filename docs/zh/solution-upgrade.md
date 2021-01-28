@@ -20,8 +20,3 @@ apt update && apt upgrade -y
 yum update -y --skip-broken
 ```
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
-
-
-## RocketMQ升级 TODO
-
-详情参考官方升级文档：[Upgrading RocketMQ](https://www.rocketmq.com/upgrade.html)
