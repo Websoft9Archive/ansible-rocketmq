@@ -62,7 +62,7 @@
     state: link
   with_items:
     - {src: /data/wwwroot/rocketmq/bin/mqadmin,dest: /usr/bin/mqadmin}
-    - {src: ~/logs/rocketmqlogs/,dest: /data/logs/rocketmq/}
+    - {src: '{{ansible_env.HOME}}/logs/rocketmqlogs/',dest: /data/logs/rocketmq}
     - {src: /data/wwwroot/rocketmq/conf/,dest: /data/config/rocketmq}
     - {src: /data/wwwroot/rocketmq/bin/runserver.sh,dest: /data/config/rocketmq/runserver.sh}
     - {src: /data/wwwroot/rocketmq/bin/runbroker.sh,dest: /data/config/rocketmq/runbroker.sh}
