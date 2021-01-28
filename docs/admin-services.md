@@ -5,55 +5,24 @@ These commands are required when you use the RocketMQ of Websoft9.
 ### RocketMQ
 
 ```shell
-sudo systemctl start rocketmq-server
-sudo systemctl stop rocketmq-server
-sudo systemctl restart rocketmq-server
-sudo systemctl status rocketmq-server
-
-# you can use this debug mode if RocketMQ service can't run
-rocketmq-server console
+sudo systemctl start mqnamesrv
+sudo systemctl stop mqnamesrv
+sudo systemctl restart mqnamesrv
+sudo systemctl status mqnamesrv
 ```
 
-### MySQL
-
 ```shell
-sudo systemctl start mysql
-sudo systemctl stop mysql
-sudo systemctl restart mysql
-sudo systemctl status mysql
-```
-
-### Redis
-
-```shell
-sudo systemctl start redis
-sudo systemctl stop redis
-sudo systemctl restart redis
-sudo systemctl status redis
+sudo systemctl start mqbroker
+sudo systemctl stop mqbroker
+sudo systemctl restart mqbroker
+sudo systemctl status mqbroker
 ```
 
 ### Docker
-```shell
-sudo systemctl start docker
-sudo systemctl stop docker
-sudo systemctl restart docker
-sudo systemctl status docker
-```
 
-### phpMyAdmin on Docker
 ```shell
-sudo docker inspect phpmyadmin
-sudo docker start phpmyadmin
-sudo docker restart phpmyadmin
-sudo docker stop phpmyadmin
-sudo docker rm phpmyadmin
-```
-
-### ONLYOFFICE Document Server on Docker
-```shell
-sudo docker inspect onlyofficedocumentserver
-sudo docker start onlyofficedocumentserver
-sudo docker restart onlyofficedocumentserver
-sudo docker stop onlyofficedocumentserver
-sudo docker rm onlyofficedocumentserver
+systemctl start Docker
+systemctl stop Docker
+systemctl restart Docker
+systemctl status Docker
 ```
