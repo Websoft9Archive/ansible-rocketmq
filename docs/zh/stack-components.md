@@ -10,30 +10,16 @@ RocketMQ 预装包包含 RocketMQ 运行所需一序列支撑软件（简称为�
 
 ### RocketMQ
 
-RocketMQ 安装目录： */data/rocketmq*  
+RocketMQ 安装目录： */data/wwwroot/rocketmq*  
 RocketMQ 日志目录： */data/logs/rocketmq*  
+RocketMQ 配置文件： */data/config/rocketmq*
 
-### Nginx
+### RocketMQ-Console-Ng
 
-Nginx 虚拟主机配置文件：*/etc/nginx/conf.d/default.conf*  
-Nginx 主配置文件： */etc/nginx/nginx.conf*  
-Nginx 日志文件： */var/log/nginx*  
-Nginx 伪静态规则目录： */etc/nginx/conf.d/rewrite*
+RocketMQ-Console-Ng 是一款可视化 RocketMQ 管理工具，在本项目中它基于 Docker 安装。  
 
-### MySQL
-
-MySQL 安装路径: */usr/local/mysql*  
-MySQL 数据文件 */data/mysql*  
-MySQL 配置文件: */etc/my.cnf*  
-
-MySQL 可视化管理参考 [MySQL 管理](/zh/admin-mysql.md) 章节。
-
-### phpMyAdmin
-
-phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。  
-
-phpMyAdmin directory：*/data/apps/phpmyadmin*  
-phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml* 
+安装目录：*/data/apps/rocketmq-console-ng*  
+Compose文件：*/data/apps/rocketmq-console-ng/docker-compose.yml* 
 
 ### Docker
 
@@ -49,9 +35,8 @@ Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下�
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| TCP | 15672 | 通过 HTTP 访问 RocketMQ 控制台 | 可选 |
-| TCP | 5672 | epmd | 可选 |
-| TCP | 55672 | Erlang distribution | 可选 |
+| TCP | 9876 | 通过 HTTP 访问 RocketMQ Broker Server | 必须 |
+| TCP | 9003 | 通过 HTTP 访问 RocketMQ-Console-Ng    | 可选 |
 
 ## 版本号
 
@@ -64,19 +49,10 @@ sudo cat /data/logs/install_version.txt
 # Linux Version
 lsb_release -a
 
-# Nginx  Version
-nginx -V
-
 # Java version
 java -v
 
 # Docker Version
 docker -v
 
-# erlang  Version
-yum info erlang
-apt show erlang
-
-# RocketMQ version
-rabbitmqctl status | grep RocketMQ*
 ```

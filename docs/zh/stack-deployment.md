@@ -29,4 +29,4 @@
 
 虽然通过镜像部署与脚本部署的结果一致，这两种部署方式有什么差异或优劣呢？：
 
-建议立即阅读 [《镜像部署 vs 脚本部署》](https://support.websoft9.com/docs/faq/zh/bz-product.html#镜像部署-vs-脚本部署)
+建议立即阅读 [《镜像部署 vs 脚本部署》](https://support.websoft9.com/docs/faq/zh/bz-product.html#镜像部署-vs-脚本部署)RocketMQ-Console-Ng

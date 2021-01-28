@@ -24,4 +24,4 @@ free -lh
 systemctl status rocketmq
 journalctl -u rocketmq
 ```
-
+更多的故障问题请参照[官方文档](http://rocketmq.apache.org/docs/faq/)
