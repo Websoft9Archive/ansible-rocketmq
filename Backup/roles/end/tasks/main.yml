@@ -1,2 +1,0 @@
-- name: remove SSH key
-  shell: rm -rf {~/.ssh,/root/.ssh}
