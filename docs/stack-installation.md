@@ -16,8 +16,7 @@ If you have completed the RocketMQ deployment, follow the steps below to start a
 2. Log in RocketMQ-Console-Ng console. ([Don't have password?](/stack-accounts.md#rocketmq)) 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-console-websoft9.png)
 
-
-> More guide about RocketMQ, please refer to [RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/).
+ > More guide about RocketMQ, please refer to [RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/).
 
 ## RocketMQ Setup wizard
 

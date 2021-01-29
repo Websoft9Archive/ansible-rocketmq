@@ -53,4 +53,7 @@ nginx -V
 # Java version
 java -v
 
+# Docker Version
+docker -v
+
 ```
