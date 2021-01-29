@@ -1,27 +1,25 @@
 # FAQ
 
-#### How can I enable the debug mode of RocketMQ service?
+#### RocketMQ-Console-Ng is multilingual supported?
 
-```
-systemctl stop rocketmq-server
-rocketmq-server console
-```
+At present, it supports English and simplified Chinese, which can be set after login
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-language-websoft9.png)
 
-#### Can I reset password of RocketMQ by command?
+#### How to install RocketMQ in this project?
 
-Yes, e.g `rabbitmqctl change_password  admin newpassword`
+Installed by binary package.
 
-#### If there is no domain name, can I deploy RocketMQ?
+#### How long do RocketMQ messages last?
 
-Yes, access RocketMQ by *http://Server's Internet IP:8161*.
+Messages will be saved for up to 3 days, and messages not used for more than 3 days will be deleted.
 
-#### What is the password for the database root user?
+#### What is the password for the admin user?
 
 The password is stored in the server related file `/credentials/password.txt`.
 
-#### Is there a web-base GUI database management tool?
+#### Is there a web-base GUI management tool?
 
-Yes, phpMyAdmin is included. Visit by *http://Server's Internet IP:9090*.
+Yes, RocketMQ-Console-Ng is included. Visit by *http://Server's Internet IP*.
 
 #### Is it possible to modify the source path of RocketMQ?
 
