@@ -8,6 +8,7 @@ This documentation is provided by [Websoft9](https://www.websoft9.com/). It can 
 
 [RocketMQ](http://rocketmq.apache.org/) is a distributed open source message queuing system developed by Alibaba, and it is a distributed message middleware with low latency, high concurrency, high availability and high reliability.
 
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-console-websoft9.png)
 ---
 
 ## Improve

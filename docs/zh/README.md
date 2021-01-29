@@ -8,6 +8,8 @@ home: false
 
 [RocketMQ](http://rocketmq.apache.org/) 是阿里主导开发的分布式开源消息队列系统，是一个低延迟、高并发、高可用、高可靠的分布式消息中间件。
 
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-console-websoft9.png)
+
 ---
 
 ## 改进

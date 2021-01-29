@@ -55,4 +55,7 @@ java -v
 # Docker Version
 docker -v
 
+# RocketMQ version
+ls /data/wwwroot/rocketmq/lib |grep rocketmq-broker
+
 ```

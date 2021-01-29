@@ -21,7 +21,10 @@ df -lh
 free -lh
 
 # 查看服务状态和日志
-systemctl status rocketmq
-journalctl -u rocketmq
+systemctl status mqnamesrv
+journalctl -u mqnamesrv
+
+systemctl status mqbroker
+journalctl -u mqbroker
 ```
-更多的故障问题请参照[官方文档](http://rocketmq.apache.org/docs/faq/)
+>更多的故障问题请参照[官方文档](http://rocketmq.apache.org/docs/faq/)

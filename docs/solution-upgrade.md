@@ -23,3 +23,28 @@ apt update && apt upgrade -y
 yum update -y --skip-broken
 ```
 > This deployment package is pre-configured with a scheduled task for automatic updating. If you want to remove the automatic updating, please delete the corresponding Cron.
+
+### Upgrade steps
+
+1. Stop RocketMQ service
+```
+sudo systemctl stop mqnamesrv
+sudo systemctl stop mqbroker
+```
+
+2. Compress the entire directory */data/wwwroot*
+
+3. Delete all the files of */data/wwwroot*
+
+4. Download latest RocketMQ version，unzip into */data/wwwroot*
+
+5. Edit `JAVA_OPT` of the file /data/wwwroot/rocketmq/bin/runserver.shJAVA_OPT
+
+6. Restart service, upgrade success if status is OK
+```
+sudo systemctl start mqnamesrv
+sudo systemctl start mqbroker
+systemctl status mqnamesrv
+systemctl status mqbroker
+
+```

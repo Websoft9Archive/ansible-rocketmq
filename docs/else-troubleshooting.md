@@ -16,8 +16,11 @@ It is recommended to first check through the command.
 
 ```shell
 # restart RocketMQ service
-systemctl status rocketmq
-journalctl -u rocketmq
+systemctl status mqnamesrv
+journalctl -u mqnamesrv
+
+systemctl status mqbroker
+journalctl -u mqbroker
 
 # view disk space
 df -lh

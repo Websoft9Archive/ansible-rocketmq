@@ -20,3 +20,34 @@ apt update && apt upgrade -y
 yum update -y --skip-broken
 ```
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
+
+## RocketMQ 升级
+
+### 升级前提
+升级前，请查看官方JDK是否满足新版本需求，不满足需要安装符合要求的JDK
+
+### 升级步骤
+
+1. 停止当前RocketMQ服务
+```
+sudo systemctl stop mqnamesrv
+sudo systemctl stop mqbroker
+```
+
+2. 将目录（*/data/wwwroot/*）**压缩后**备份
+
+3. 删除/data/wwwroot/下所有文件以及文件夹
+
+4. 下载需要的RocketMQ版本，并解压到/data/wwwroot/目录下
+
+5. 修改/data/wwwroot/rocketmq/bin/runserver.sh的JAVA_OPT配置，使其能正常运行
+
+6. 重新启动服务，其状态正常就代表升级成功
+```
+sudo systemctl start mqnamesrv
+sudo systemctl start mqbroker
+systemctl status mqnamesrv
+systemctl status mqbroker
+
+```
+
