@@ -43,12 +43,12 @@ Different Cloud Platforms' snapshot settings slightly differ. Refer to [Cloud pl
 
 ### Manual backup for application
 
- Manual backups for applications is to achieve a minimized backup scheme by **Exporting source code and database of application**.
+ Manual backups for applications is to achieve a minimized backup scheme by **Exporting source code of application**.
 
  View the following list to understand this kind of backup.
 
 ```
-- Backup scope: Source code and database of application
+- Backup scope: Source code  of application
 - Backup effect: Good
 - Backup frequency: You can operate when you need
 - Recovery method: Import
@@ -58,7 +58,4 @@ Different Cloud Platforms' snapshot settings slightly differ. Refer to [Cloud pl
 The general steps to make a manual backup are as follows:
 
 1. Compress and download the entire directory */data/wwwroot* by SFTP.
-2. Export LAMP's database by [phpMyAdmin](/admin-mysql.md).
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/phpmyadmin/phpmyadmin-export-websoft9.png)
-3. Put the source code file and database file in the same folder, and name it according to the date.
-4. Complete a backup.
+2. Complete a backup.

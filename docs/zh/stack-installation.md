@@ -10,20 +10,13 @@
 
 ## RocketMQ 安装向导
 
-1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://服务器公网IP*, 进入初始化页面
+1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://服务器公网IP*, 进入登陆页面
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-login-websoft9.png)
 
 2. 输入账号密码（[不知道账号密码？](/zh/stack-accounts.md#rocketmq)），成功登录到 RocketMQ 后台  
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-bk-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-console-websoft9.png)
 
-3. 登录后通过：【Users】>【Admin】>【Permissions】>【Update this user】设置新密码  
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-pw-websoft9.png)
-
-> 需要了解更多 RocketMQ 的使用，请参考官方文档：[RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/)
-
-## RocketMQ 入门向导
-
-现在开始针对于如何使用 RocketMQ 传输数据，进行完整的说明：
+ > 需要了解更多 RocketMQ 的使用，请参考官方文档：[RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/)
 
 ## 常见问题
 

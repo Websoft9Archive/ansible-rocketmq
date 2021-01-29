@@ -1,15 +1,6 @@
 # CHANGELOG
 
-
-
-## To do
-
-
-## Logs
-* 2020-03  改写项目
-
-### Bug Fixes
-
-
-### Features
-
+## Release v4.8.0-1  2021-1-29
+### Fixes and Enhancements
+- Add RocketMQ console and set credential for it #4
+- Documentation V1.0 #3

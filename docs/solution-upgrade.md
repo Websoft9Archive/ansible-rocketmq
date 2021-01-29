@@ -23,7 +23,3 @@ apt update && apt upgrade -y
 yum update -y --skip-broken
 ```
 > This deployment package is pre-configured with a scheduled task for automatic updating. If you want to remove the automatic updating, please delete the corresponding Cron.
-
-## Upgrade RocketMQ
-
-Refer to the official docs: [Upgrading RocketMQ](https://www.rocketmq.com/upgrade.html)
