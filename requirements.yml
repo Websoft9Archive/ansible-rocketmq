@@ -2,5 +2,6 @@
 - src: http://github.com/websoft9dev/role_jdk
 - src: http://github.com/websoft9dev/role_nginx
 - src: http://github.com/websoft9dev/role_docker
+- src: http://github.com/websoft9dev/role_init
 - src: http://github.com/websoft9dev/role_preend
 - src: http://github.com/websoft9dev/role_end

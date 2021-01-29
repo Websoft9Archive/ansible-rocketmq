@@ -5,11 +5,10 @@ jdk_distribution: "jdk"
 docker_applications:
   - rocketmqconsole
 
-docker_apps_rocketmqconsole_port: 9003
-
 nginx_htpasswd: True
 
-nginx_reverse_proxy_port: 9003
+nginx_listen_port: "9003"
+nginx_reverse_proxy_port: "9004"
 
 init_application:
   nginx:

@@ -10,10 +10,6 @@
     remote_src: yes
     mode: 0750
 
-- name: Get rocketmq version
-  shell: ls /data/wwwroot/ |grep rocketmq |cut -d- -f 3
-  register: rocketmq_version
-
 - name: Rename dir name and Setting environment
   shell: |
     cd /data/wwwroot; if [ ! -d "rocketmq" ]; then mv rocketmq-* rocketmq; fi
@@ -71,7 +67,7 @@
 # must use sudo sh -c to solve the no-root permission
 - block:
   - name: Check RocketMQ Version
-    shell: sudo echo "rocketmq version:" "{{rocketmq_version.stdout}}" |sudo tee -a /data/logs/install_version.txt
+    shell: sudo echo "rocketmq version:" $(ls /data/wwwroot/rocketmq/lib |grep rocketmq-broker |cut -d- -f3) |sudo tee -a /data/logs/install_version.txt
 
 # check service state
 - name: Check mqnamesrv Service
