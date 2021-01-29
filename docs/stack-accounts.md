@@ -10,12 +10,6 @@ Here are the required username and password for RocketMQ image installation and 
 
 * RocketMQ administrator username: `admin`
 * RocketMQ administrator password: Get it form the file of your server */credentials/password.txt*
-  > If there no password.txt exist, the administrator password is `admin`
-
-## MySQL
-
-* MySQL administrator username: `root`
-* MySQL administrator password: Get it from the file of your server */credentials/password.txt*  
 
 ## Linux
 

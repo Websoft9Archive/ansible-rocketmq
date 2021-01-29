@@ -4,7 +4,7 @@ home: false
 
 # Overview
 
-This documentation is provided by [Websoft9](https://www.websoft9.com/). It can help users to acquire skills of RocketMQ Deployment, Installation, Configuration, HTTPS,  Backup, Upgrade, Connect Instance and more.
+This documentation is provided by [Websoft9](https://www.websoft9.com/). It can help users to acquire skills of RocketMQ Deployment, Installation, Configuration,  Backup, Upgrade, Connect Instance and more.
 
 [RocketMQ](http://rocketmq.apache.org/) is a distributed open source message queuing system developed by Alibaba, and it is a distributed message middleware with low latency, high concurrency, high availability and high reliability.
 

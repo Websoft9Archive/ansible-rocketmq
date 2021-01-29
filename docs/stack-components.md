@@ -6,8 +6,9 @@ The RocketMQ deployment package contains a sequence of software (referred to as 
 
 ### RocketMQ
 
-RocketMQ installation directory:  */data/rocketmq*  
-RocketMQ logs directory:  */data/logs/rocketmq*  
+RocketMQ installation directory: */data/wwwroot/rocketmq*  
+RocketMQ  logs directory: */data/logs/rocketmq*  
+RocketMQ configuration file: */data/config/rocketmq* 
 
 ### Nginx
 
@@ -15,27 +16,6 @@ Nginx vhost configuration file: */etc/nginx/conf.d/default.conf*
 Nginx main configuration file: */etc/nginx/nginx.conf*   
 Nginx logs file: */var/log/nginx*  
 Nginx rewrite rules directory: */etc/nginx/conf.d/rewrite* 
-
-### MySQL
-
-MySQL installation directory: */usr/local/mysql*  
-MySQL data directory: */data/mysql*  
-MySQL configuration file: */etc/my.cnf*    
-
-MySQL Web Management refer to [MySQL Management](/admin-mysql.md)
-
-### Docker
-
-Docker root directory: */var/lib/docker*  
-Docker image directory: */var/lib/docker/image*   
-Docker daemon.json: please create it when you need and save to to the directory */etc/docker*   
-
-###  phpMyAdmin
-
-phpMyAdmin is a visual MySQL management tool, is installed based on docker.  
-
-phpMyAdmin directory：*/data/apps/phpmyadmin*  
-phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml* 
 
 ## Ports
 
@@ -47,13 +27,8 @@ The following are the ports you may use:
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
-| TCP | 80 | HTTP to access RocketMQ | Required |
-| TCP | 443 | HTTPS to access RocketMQ | Optional |
-| TCP | 3306 | Remote to access MySQL | Optional |
-| TCP | 9003 | Use port to access RocketMQ | Optional |
-| TCP | 9002 | RocketMQ Document Server on Docker | Optional |
-| TCP | 9090 | phpMyAdmin on Docker | Optional |
-
+| TCP | 80 | HTTP to access RocketMQ-Console-Ng | Required |
+| TCP | 9876 | HTTPS to access  RocketMQ Broker Server | Required |
 
 ## Version
 
@@ -72,13 +47,4 @@ nginx -V
 # Java version
 java -v
 
-# Docker Version
-docker -v
-
-# erlang  Version
-yum info erlang
-apt show erlang
-
-# RocketMQ version
-rabbitmqctl status | grep RocketMQ*
 ```

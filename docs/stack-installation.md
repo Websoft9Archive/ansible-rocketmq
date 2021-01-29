@@ -10,13 +10,12 @@ If you have completed the RocketMQ deployment, follow the steps below to start a
 
 ## RocketMQ Installation Wizard
 
-1. Use local Chrome or Firefox to access the URL *http://DNS:80* or *http://Server's Server's Internet IP:80*. You will enter installation wizard of RocketMQ.
+1. Use local Chrome or Firefox to access the URL *http://DNS:80* or *http://Server's Server's Internet IP:80*. Enter the login page.
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-login-websoft9.png)
 
-2. Log in RocketMQ web console. ([Don't have password?](/stack-accounts.md#rocketmq)) 
+2. Log in RocketMQ-Console-Ng console. ([Don't have password?](/stack-accounts.md#rocketmq)) 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-console-websoft9.png)
 
-=
 
 > More guide about RocketMQ, please refer to [RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/).
 
