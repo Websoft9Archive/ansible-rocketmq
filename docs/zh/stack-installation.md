@@ -18,10 +18,6 @@
 
 > 需要了解更多 RocketMQ 的使用，请参考官方文档：[RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/)
 
-## RocketMQ 入门向导
-
-现在开始针对于如何使用 RocketMQ 传输数据，进行完整的说明：
-
 ## 常见问题
 
 #### 浏览器打开IP地址，无法访问 RocketMQ（白屏没有结果）？
