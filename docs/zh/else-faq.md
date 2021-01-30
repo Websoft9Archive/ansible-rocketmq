@@ -29,7 +29,7 @@
 
 ```shell
 # 拥有者
-chown -R apache.apache /data/wwwroot/
+chown -R nginx.nginx /data/wwwroot/
 # 读写执行权限
 find /data/wwwroot/ -type d -exec chmod 750 {} \;
 find /data/wwwroot/ -type f -exec chmod 640 {} \;

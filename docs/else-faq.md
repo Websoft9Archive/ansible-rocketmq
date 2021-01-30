@@ -3,7 +3,7 @@
 #### RocketMQ-Console-Ng is multilingual supported?
 
 At present, it supports English and simplified Chinese, which can be set after login
-![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-language-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-language-websoft9.png)
 
 #### How to install RocketMQ in this project?
 
@@ -30,7 +30,7 @@ No.
 Change owner(group) or permissions as below:
 
 ```shell
-chown -R apache.apache /data/wwwroot
+chown -R nginx.nginx /data/wwwroot
 find /data/wwwroot -type d -exec chmod 750 {} \;
 find /data/wwwroot -type f -exec chmod 640 {} \;
 ```
