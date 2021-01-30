@@ -21,7 +21,7 @@ sudo systemctl status mqbroker
 
 ### 通过可视化工具验证
 1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名:9003* 或 *http://服务器公网IP:9003*, 进入登陆页面
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-login-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-loginonly-websoft9.png)
 
 2. 输入账号密码（[不知道账号密码？](/zh/stack-accounts.md#rocketmq)），成功登录到 RocketMQ 后台，没有弹出错误表示连接正常 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-console-websoft9.png)

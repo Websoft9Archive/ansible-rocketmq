@@ -22,7 +22,7 @@ sudo systemctl status mqbroker
 ### Verified by visual tools
 
 1. Use local Chrome or Firefox to access the URL *http://DNS:9003* or *http://Server's Server's Internet IP:9003*. Enter the login page.
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-login-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-loginonly-websoft9.png)
 
 2. Log in RocketMQ-Console-Ng console. ([Don't have password?](/stack-accounts.md#rocketmq)), no pop-up error indicates normal connection 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-console-websoft9.png)
