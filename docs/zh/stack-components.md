@@ -35,7 +35,7 @@ Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下�
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| TCP | 9876 | 通过 HTTP 访问 RocketMQ Broker Server | 必须 |
+| TCP | 9876 | 通过 TCP/HTTP 访问 RocketMQ Broker Server | 必须 |
 | TCP | 9003 | 通过 HTTP 访问 RocketMQ-Console-Ng    | 可选 |
 
 ## 版本号

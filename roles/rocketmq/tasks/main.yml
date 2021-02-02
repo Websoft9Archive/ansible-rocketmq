@@ -1,30 +1,30 @@
 # prepare installation
-- name: rm -rf /data/wwwroot/rocketmq for second installation
-  shell: rm -rf /data/wwwroot/rocketmq
+- name: rm -rf /data/rocketmq for second installation
+  shell: rm -rf /data/rocketmq
 
 # download rocketmq  
 - name: Download rocketmq
   unarchive:
     src: "{{rocketmq_download_url}}"
-    dest: /data/wwwroot
+    dest: /data
     remote_src: yes
     mode: 0750
 
 - name: Rename dir name and Setting environment
   shell: |
-    cd /data/wwwroot; if [ ! -d "rocketmq" ]; then mv rocketmq-* rocketmq; fi
+    cd /data; if [ ! -d "rocketmq" ]; then mv rocketmq-* rocketmq; fi
     export NAMESRV_ADDR=localhost:9876
 
 - name: Change runserver.sh file 
   lineinfile:
-    dest: /data/wwwroot/rocketmq/bin/runserver.sh
+    dest: /data/rocketmq/bin/runserver.sh
     regexp: '.* -server -Xms4g -Xmx4g -Xmn2g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m.*'
     line: 'JAVA_OPT="${JAVA_OPT} -server -Xms256m -Xmx256m -Xmn125m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"'
     backrefs: yes 
 
 - name: Change runbroker.sh file 
   lineinfile:
-    dest:  /data/wwwroot/rocketmq/bin/runbroker.sh
+    dest:  /data/rocketmq/bin/runbroker.sh
     regexp: '.* -server -Xms8g -Xmx8g -Xmn4g.*'
     line:  'JAVA_OPT="${JAVA_OPT} -server -Xms256m -Xmx256m -Xmn125m"'
     backrefs: yes   
@@ -57,17 +57,17 @@
     dest: '{{item.dest}}'
     state: link
   with_items:
-    - {src: /data/wwwroot/rocketmq/bin/mqadmin,dest: /usr/bin/mqadmin}
+    - {src: /data/rocketmq/bin/mqadmin,dest: /usr/bin/mqadmin}
     - {src: '{{ansible_env.HOME}}/logs/rocketmqlogs/',dest: /data/logs/rocketmq}
-    - {src: /data/wwwroot/rocketmq/conf/,dest: /data/config/rocketmq}
-    - {src: /data/wwwroot/rocketmq/bin/runserver.sh,dest: /data/config/rocketmq/runserver.sh}
-    - {src: /data/wwwroot/rocketmq/bin/runbroker.sh,dest: /data/config/rocketmq/runbroker.sh}
+    - {src: /data/rocketmq/conf/,dest: /data/config/rocketmq}
+    - {src: /data/rocketmq/bin/runserver.sh,dest: /data/config/rocketmq/runserver.sh}
+    - {src: /data/rocketmq/bin/runbroker.sh,dest: /data/config/rocketmq/runbroker.sh}
 
 # Check version,
 # must use sudo sh -c to solve the no-root permission
 - block:
   - name: Check RocketMQ Version
-    shell: sudo echo "rocketmq version:" $(ls /data/wwwroot/rocketmq/lib |grep rocketmq-broker |cut -d- -f3) |sudo tee -a /data/logs/install_version.txt
+    shell: sudo echo "rocketmq version:" $(ls /data/rocketmq/lib |grep rocketmq-broker |cut -d- -f3) |sudo tee -a /data/logs/install_version.txt
 
 # check service state
 - name: Check mqnamesrv Service
