@@ -16,7 +16,9 @@ module.exports = [
     title: '实践指南',
     collapsable: false,
     children: [
+      '/zh/solution-study',
       '/zh/solution-cli',
+      '/zh/solution-gui',
       '/zh/solution-backup',
       '/zh/solution-upgrade',
       '/zh/solution-more',
@@ -28,6 +30,8 @@ module.exports = [
     collapsable: false,
     children: [
       '/zh/admin-services',
+      ['https://support.websoft9.com/docs/linux/zh/lang-java.html','Java'],
+      ['https://support.websoft9.com/docs/docker/zh','Docker'],
       ['https://support.websoft9.com/docs/linux/zh/webs-nginx.html','Nginx'],
       ['https://support.websoft9.com/docs/linux/zh/admin-practices.html','Linux'],
     ]

@@ -11,7 +11,6 @@
 #### RocketMQ服务无法启动？
 
 服务无法启动最常见的问题包括：磁盘空间不足，内存不足，配置文件错误。  
-建议先通过命令进行排查，如果还是不能排除故障，查看`/data/wwwroot/rocketmq/bin/runserver.sh`中的JAVA_OPT设置
 
 ```shell
 # 查看磁盘空间
@@ -27,4 +26,8 @@ journalctl -u mqnamesrv
 systemctl status mqbroker
 journalctl -u mqbroker
 ```
+
+RocketMQ 最低内存设置查看 **runserver.sh** 和 **runbroker.sh**` JAVA_OPT 设置
+
+
 >更多的故障问题请参照[官方文档](http://rocketmq.apache.org/docs/faq/)

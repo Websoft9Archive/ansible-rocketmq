@@ -57,5 +57,5 @@ Different Cloud Platforms' snapshot settings slightly differ. Refer to [Cloud pl
 ```
 The general steps to make a manual backup are as follows:
 
-1. Compress and download the entire directory */data/wwwroot* by SFTP.
+1. Compress and download the entire directory */data/rocketmq* by SFTP.
 2. Complete a backup.

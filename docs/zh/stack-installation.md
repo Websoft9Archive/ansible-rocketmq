@@ -8,44 +8,48 @@
 2. 在云控制台安全组中，检查 **Inbound（入）规则** 下的 **TCP:9003** 端口是否开启
 3. 若想用域名访问 RocketMQ，请先到 **域名控制台** 完成一个域名解析
 
-## RocketMQ 验证
+## RocketMQ 验证向导
 
-### 通过shell命令验证
-使用SSH登录到服务器后，运行如下几个命令，检查RocketMQ是否正确安装
-
-```
-sudo systemctl status mqnamesrv
-sudo systemctl status mqbroker
-
-```
-
-### 通过可视化工具验证
-1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名:9003* 或 *http://服务器公网IP:9003*, 进入登陆页面
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-loginonly-websoft9.png)
-
-2. 输入账号密码（[不知道账号密码？](/zh/stack-accounts.md#rocketmq)），成功登录到 RocketMQ 后台，没有弹出错误表示连接正常 
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-console-websoft9.png)
-
-3. 验证失败时，右上角出现如下错误信息
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-error-websoft9.png)
-
-> 需要了解更多 RocketMQ 的使用，请参考官方文档：[RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/)
+1. 使用 SSH 登录到 RocketMQ 所在服务器后，运行如下命令，检查 RocketMQ 服务状态
+   ```
+   sudo systemctl status mqnamesrv
+   sudo systemctl status mqbroker
+   ```
+2. 使用本地浏览器访问可视化工具 [RocketMQ-Console](/zh/solution-gui.md)，进一步验证。
+   ![RocketMQ-Console](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-console-websoft9.png)
 
 ## RocketMQ 入门向导
 
-现在开始针对于如何使用 RocketMQ 发送和接受消息，进行完整的说明：
-在发送/接收消息之前，我们需要告诉客户端名称服务器的位置。RocketMQ提供了多种方法来实现这一目标。为简单起见，我们使用环境变量`NAMESRV_ADDR`，实现流程如下：
-```
- > export NAMESRV_ADDR=localhost:9876
- > sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
- SendResult [sendStatus=SEND_OK, msgId= ...
+现在开始针对于如何使用 RocketMQ 发送（生产者）和接受消息（消费者），进行完整的实验说明。  
 
- > sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
- ConsumeMessageThread_%d Receive New Messages: [MessageExt...
-```
- >完成后发现RocketMQ-Console-Ng 界面产生变化：
- ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-send-websoft9.png)
+> 建议开始下面的步骤之前，先花5分钟时间阅读由通俗易懂的 [RocketMQ 知识要点](/zh/solution-study.md) 
 
+1. 对实验所需准备的工具或程序做出说明
+
+   * 发送人（本实验对应的是一个程序）：*/data/rocketmq/bin/tools.sh*
+   * 接收人（本实验对应的是一个程序）：*/data/rocketmq/bin/tools.sh*
+   * 消息信件：示例代码生成 `org.apache.rocketmq.example.quickstart.Producer` （Java 类）
+   * 消息存储地： **RabbitMQ Broker**
+   * 消息订单处理中心：**NAMESRV_ADDR** 用于根据消息存储地资源情况进行消息的动态分配
+
+2. 使用 SSH 登录到 RocketMQ 服务器，运行下面命令，以发件人的身份发送消息
+   ```
+   export NAMESRV_ADDR=localhost:9876
+   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+   ```
+
+3. 发送成功会收到 *SendResult [sendStatus=SEND_OK, msgId= ...* 之类的反馈结果
+
+4. 在运行下面的命令，以收件人的身份接受消息
+   ```
+   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
+   ```
+5. 接受成功会收到 *ConsumeMessageThread_%d Receive New Messages: [MessageExt...* 之类的反馈结果
+
+6. 登录到可视化界面 [RocketMQ-Console](/zh/solution-gui.md) 中可更直观的查看运行结果
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-send-websoft9.png)
+
+> 需要了解更多 RocketMQ 的使用，请参考官方文档：[RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/)
 
 ## 常见问题
 

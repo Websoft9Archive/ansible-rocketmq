@@ -6,8 +6,8 @@ The RocketMQ deployment package contains a sequence of software (referred to as 
 
 ### RocketMQ
 
-RocketMQ installation directory: */data/wwwroot/rocketmq*  
-RocketMQ  logs directory: */data/logs/rocketmq*  
+RocketMQ installation directory: */data/rocketmq*  
+RocketMQ logs directory: */data/logs/rocketmq*  
 RocketMQ configuration file: */data/config/rocketmq* 
 
 ### Nginx
@@ -34,7 +34,7 @@ The following are the ports you may use:
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
 | TCP | 9003 | HTTP to access RocketMQ-Console-Ng | Required |
-| TCP | 9876 | TCP/HTTP to access  RocketMQ Broker Server | Required |
+| TCP | 9876 | RocketMQ Broker Server | Required |
 
 ## Version
 
@@ -57,6 +57,6 @@ java -v
 docker -v
 
 # RocketMQ version
-ls /data/wwwroot/rocketmq/lib |grep rocketmq-broker
+ls /data/rocketmq/lib |grep rocketmq-broker
 
 ```

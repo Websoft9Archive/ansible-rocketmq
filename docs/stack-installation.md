@@ -10,42 +10,45 @@ If you have completed the RocketMQ deployment, follow the steps below to start a
 
 ## RocketMQ install verification
 
-### Verification by shell command
+1. Use **SSH** to connect RocketMQ and run the following commands to check for the status of RocketMQ
+   ```
+   sudo systemctl status mqnamesrv
+   sudo systemctl status mqbroker
+   ```
+2. Use local Chrome or Firefox to access [RocketMQ-Console](/zh/solution-gui.md) to verify more
+   ![RocketMQ-Console](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-console-websoft9.png)
 
-After logging in to the server with SSH, run the following commands to check whether rocketmq is installed correctly.
-```
-sudo systemctl status mqnamesrv
-sudo systemctl status mqbroker
-
-```
-
-### Verified by visual tools
-
-1. Use local Chrome or Firefox to access the URL *http://DNS:9003* or *http://Server's Server's Internet IP:9003*. Enter the login page.
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-loginonly-websoft9.png)
-
-2. Log in RocketMQ-Console-Ng console. ([Don't have password?](/stack-accounts.md#rocketmq)), no pop-up error indicates normal connection 
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-console-websoft9.png)
-
-3. When the verification fails, the following error message appears in the upper right corner of web page
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-error-websoft9.png)
-
- > More guide about RocketMQ, please refer to [RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/).
 
 ## RocketMQ Setup wizard
 
-RocketMQ Name Server，Broker after service startup, how to verify whether messages can be sent and received normally?  
-Before sending/receiving messages, we need to tell client the location of the name server. It provides a variety of ways to achieve this. For simplicity, we use the environment variable `NAMESRV_ADDR`, the implementation process is as follows:
-```
- > export NAMESRV_ADDR=localhost:9876
- > sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
- SendResult [sendStatus=SEND_OK, msgId= ...
+This chapter we will introduce a details for you how to use RocketMQ to send messages (producer) and consume messages(consumer)  
 
- > sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
- ConsumeMessageThread_%d Receive New Messages: [MessageExt...
-```
- >After completion, the rocketmq console ng interface changes:
- ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-send-websoft9.png)
+1. Explain the tools or procedures required for the experiment
+
+   * producer: */data/rocketmq/bin/tools.sh*
+   * consumer：*/data/rocketmq/bin/tools.sh*
+   * Messages：produce from the Java Class `org.apache.rocketmq.example.quickstart.Producer`  
+   * Messages storage:  **RabbitMQ Broker**
+   * Message order management: **NAMESRV_ADDR** 
+
+2. Use **SSH** to connect RocketMQ Server, run the following command to send message as producer.
+   ```
+   export NAMESRV_ADDR=localhost:9876
+   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+   ```
+
+3. You can see the feedback message *SendResult [sendStatus=SEND_OK, msgId= ...* when send successfully
+
+4. Run the following command to send message as consumer.
+   ```
+   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
+   ```
+5. You can see the feedback message *ConsumeMessageThread_%d Receive New Messages: [MessageExt...* when receive successfully
+
+6. Login to GUI tool [RocketMQ-Console](/zh/solution-gui.md) to query more information
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-send-websoft9.png)
+
+> More guide about RocketMQ, please refer to [RocketMQ Documentation](http://rocketmq.apache.org/docs/quick-start/).
 
 ## Q&A
 

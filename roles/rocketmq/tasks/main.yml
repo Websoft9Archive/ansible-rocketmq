@@ -14,14 +14,14 @@
   shell: |
     cd /data; if [ ! -d "rocketmq" ]; then mv rocketmq-* rocketmq; fi
 
-- name: Change runserver.sh file 
+- name: Change runserver.sh file to reduce the default Java runtime memory
   lineinfile:
     dest: /data/rocketmq/bin/runserver.sh
     regexp: '.* -server -Xms4g -Xmx4g -Xmn2g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m.*'
     line: 'JAVA_OPT="${JAVA_OPT} -server -Xms256m -Xmx256m -Xmn125m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"'
     backrefs: yes 
 
-- name: Change runbroker.sh file 
+- name: Change runbroker.sh file to reduce the default Java runtime memory
   lineinfile:
     dest:  /data/rocketmq/bin/runbroker.sh
     regexp: '.* -server -Xms8g -Xmx8g -Xmn4g.*'

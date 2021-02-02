@@ -19,32 +19,40 @@ Run a command to complete updating the system:
 #For Ubuntu&Debian
 apt update && apt upgrade -y
 
-#For Centos&Redhat
+#For CentOS&Redhat
 yum update -y --skip-broken
 ```
 > This deployment package is pre-configured with a scheduled task for automatic updating. If you want to remove the automatic updating, please delete the corresponding Cron.
 
-### Upgrade steps
+## RocketMQ Upgrade
 
-1. Stop RocketMQ service
-```
-sudo systemctl stop mqnamesrv
-sudo systemctl stop mqbroker
-```
+RocketMQ upgrade is the same with install a new version, you must completed all resource and data before upgrade.
 
-2. Compress the entire directory */data/wwwroot*
+The following is the step for upgrade:
 
-3. Delete all the files of */data/wwwroot*
+1. Visit RocketMQ [Download](http://rocketmq.apache.org/docs/quick-start/) to check for the installation requirement
 
-4. Download latest RocketMQ version，unzip into */data/wwwroot*
+2. Stop RocketMQ service
+    ```
+    sudo systemctl stop mqnamesrv
+    sudo systemctl stop mqbroker
+    ```
+3. Delete all files in the directory of RocketMQ 
+   ```
+   rm -rf /data/rocketmq/*
+   ```
+4. Download the new RocketMQ and unzip it to */data/rocketmq*
 
-5. Edit `JAVA_OPT` of the file /data/wwwroot/rocketmq/bin/runserver.shJAVA_OPT
+5. Modify java runtime memory in the file: *rocketmq/bin/runserver.sh* (Optional)
 
-6. Restart service, upgrade success if status is OK
-```
-sudo systemctl start mqnamesrv
-sudo systemctl start mqbroker
-systemctl status mqnamesrv
-systemctl status mqbroker
+   > set Xms4g -Xmx4g -Xmn2g to Xms400M -Xmx400M -Xmn200M means reduce the memory limit
 
-```
+6. Modify java runtime memory in the file: *rocketmq/bin/runbroker.sh* (Optional)
+
+7. Restart the RocketMQ and check the status
+    ```
+    sudo systemctl start mqnamesrv
+    sudo systemctl start mqbroker
+    systemctl status mqnamesrv
+    systemctl status mqbroker
+    ```

@@ -3,7 +3,7 @@
 RocketMQ 提供了强大的的命令行工具 `mqadmin`  
 
 ```
-[root@iZj6c35wti4l2eicifw4vqZ bin]# mqadmin 
+$ mqadmin 
 The most commonly used mqadmin commands are:
    updateTopic          Update or create topic
    deleteTopic          Delete topic from broker and NameServer.

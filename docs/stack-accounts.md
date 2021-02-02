@@ -11,6 +11,8 @@ Here are the required username and password for RocketMQ image installation and 
 * RocketMQ administrator username: `admin`
 * RocketMQ administrator password: Get it form the file of your server */credentials/password.txt*
 
+> The solution use Nginx password management for RocketMQ-Console, you can modify password by: */etc/nginx/.htpasswd/htpasswd.conf*  
+
 ## Linux
 
 * Host Name: Server's Internet IP or Public IP of your Instance
@@ -21,7 +23,7 @@ Here are the required username and password for RocketMQ image installation and 
    | --- | --- | --- |
    |  Azure   |  It was set by yourself when created instance.   | [How to enable root access?](https://support.websoft9.com/docs/azure/server-login.html#sample2-enable-the-root-username) |
    |  AWS CentOS   |  centos   | [How to enable root access?](https://support.websoft9.com/docs/aws/server-login.html#sample2-enable-the-root-username) |
-   |  AWS AmaonLinux   |  ec2-user   | [How to enable root access?](https://support.websoft9.com/docs/aws/server-login.html#sample2-enable-the-root-username) |
+   |  AWS AmazonLinux   |  ec2-user   | [How to enable root access?](https://support.websoft9.com/docs/aws/server-login.html#sample2-enable-the-root-username) |
    |  AWS Ubuntu   |  ubuntu   | [How to enable root access?](https://support.websoft9.com/docs/aws/server-login.html#sample2-enable-the-root-username) |
    |  Alibaba Cloud, HUAWEI CLOUD, Tencent Cloud |  root   |
 
