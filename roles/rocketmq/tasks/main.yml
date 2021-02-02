@@ -13,7 +13,6 @@
 - name: Rename dir name and Setting environment
   shell: |
     cd /data; if [ ! -d "rocketmq" ]; then mv rocketmq-* rocketmq; fi
-    export NAMESRV_ADDR=localhost:9876
 
 - name: Change runserver.sh file 
   lineinfile:
