@@ -49,7 +49,10 @@
     name: mqbroker
     state: started
     enabled: yes
-    
+
+- name: sleep 20s,Wait service started,create log file
+  shell: sleep 20
+
 - name: Create link  
   file:
     src: '{{item.src}}'
