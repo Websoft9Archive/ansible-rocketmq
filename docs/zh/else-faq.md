@@ -2,8 +2,7 @@
 
 #### RocketMQ-Console-Ng 是否支持多语言？
 
-目前支持英文和简体中文，可以登陆后设置
-![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-language-websoft9.png)
+目前支持英文和简体中文，可以登陆后可以直接在顶部菜单进行设置。
 
 #### 本项目中 RocketMQ 采用何种安装方式？
 
@@ -16,6 +15,13 @@
 #### RocketMQ 的消息保存多久？
 
 消息将最多保存3天，未使用超过3天的消息将被删除。
+
+#### 如何修改 RocketMQ 最低运行内存？
+
+分别修改如下两个配置文件：
+
+* *rocketmq/bin/runserver.sh* 文件中 Java 启动内存大小（非必要）
+* */data/rocketmq/bin/runbroker.sh* 文件中 Java 启动内存大小（非必要）
 
 #### 是否有可视化的管理工具？
 

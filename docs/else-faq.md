@@ -2,8 +2,7 @@
 
 #### RocketMQ-Console-Ng is multilingual supported?
 
-At present, it supports English and simplified Chinese, which can be set after login
-![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-language-websoft9.png)
+It supports English and simplified Chinese
 
 #### How to install RocketMQ in this project?
 

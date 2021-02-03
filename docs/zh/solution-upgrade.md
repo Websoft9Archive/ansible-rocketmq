@@ -23,31 +23,33 @@ yum update -y --skip-broken
 
 ## RocketMQ 升级
 
-### 升级前提
-升级前，请查看官方JDK是否满足新版本需求，不满足需要安装符合要求的JDK
+升级之前请做好备份。  
 
-### 升级步骤
+RocketMQ 升级等同于重新安装，下面介绍升级步骤：
 
-1. 停止当前RocketMQ服务
-```
-sudo systemctl stop mqnamesrv
-sudo systemctl stop mqbroker
-```
+1. 访问 RocketMQ [下载页面](http://rocketmq.apache.org/docs/quick-start/)，检查服务器环境是否匹配安装要求
 
-2. 将目录（*/data/wwwroot/*）**压缩后**备份
+2. 停止 RocketMQ 服务，删除
+    ```
+    sudo systemctl stop mqnamesrv
+    sudo systemctl stop mqbroker
+    ```
+3. 删除 RocketMQ 文件夹下所有的文件
+   ```
+   rm -rf /data/rocketmq/*
+   ```
+4. 下载新的 RocketMQ，并解压到 /data/rocketmq 目录下
 
-3. 删除/data/wwwroot/下所有文件以及文件夹
+5. 修改 *rocketmq/bin/runserver.sh* 文件中 Java 启动内存大小（非必要）
 
-4. 下载需要的RocketMQ版本，并解压到/data/wwwroot/目录下
+   > Xms4g -Xmx4g -Xmn2g 改成 Xms400M -Xmx400M -Xmn200M 表示降低了内存下限。
 
-5. 修改/data/wwwroot/rocketmq/bin/runserver.sh的JAVA_OPT配置，使其能正常运行
+6. 修改 */data/rocketmq/bin/runbroker.sh* 文件中 Java 启动内存大小（非必要）
 
-6. 重新启动服务，其状态正常就代表升级成功
-```
-sudo systemctl start mqnamesrv
-sudo systemctl start mqbroker
-systemctl status mqnamesrv
-systemctl status mqbroker
-
-```
-
+7. 重新启动服务，其状态正常就代表升级成功
+    ```
+    sudo systemctl start mqnamesrv
+    sudo systemctl start mqbroker
+    systemctl status mqnamesrv
+    systemctl status mqbroker
+    ```

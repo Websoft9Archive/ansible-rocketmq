@@ -26,3 +26,13 @@ systemctl stop Docker
 systemctl restart Docker
 systemctl status Docker
 ```
+
+
+### Nginx
+
+```shell
+systemctl start nginx
+systemctl stop nginx
+systemctl restart nginx
+systemctl status nginx
+```

@@ -6,10 +6,12 @@
 
 下面列出可能需要用到的几组账号密码：
 
-## RocketMQ
+## RocketMQ-Console
 
 * 管理员账号: `admin`
 * 管理员密码: 存储在您的服务器中的文件中 */credentials/password.txt*  
+
+> 本部署方案通过 Nginx 中的密码管理来控制 RocketMQ-Console 的访问，文件地址：*/etc/nginx/.htpasswd/htpasswd.conf*  
 
 ## Linux
 

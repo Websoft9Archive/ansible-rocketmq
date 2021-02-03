@@ -1,6 +1,6 @@
 # 服务启停
 
-使用由Websoft9提供的 RocketMQ 部署方案，可能需要用到的服务如下：
+使用由 Websoft9 提供的 RocketMQ 部署方案，可能需要用到的服务如下：
 
 ### RocketMQ
 
@@ -21,8 +21,18 @@ sudo systemctl status mqbroker
 ### Docker
 
 ```shell
-systemctl start Docker
-systemctl stop Docker
-systemctl restart Docker
-systemctl status Docker
+systemctl start docker
+systemctl stop docker
+systemctl restart docker
+systemctl status docker
 ```
+
+### Nginx
+
+```shell
+systemctl start nginx
+systemctl stop nginx
+systemctl restart nginx
+systemctl status nginx
+```
+

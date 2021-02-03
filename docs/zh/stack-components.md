@@ -10,16 +10,16 @@ RocketMQ 预装包包含 RocketMQ 运行所需一序列支撑软件（简称为�
 
 ### RocketMQ
 
-RocketMQ 安装目录： */data/wwwroot/rocketmq*  
+RocketMQ 安装目录： */data/rocketmq*  
 RocketMQ 日志目录： */data/logs/rocketmq*  
 RocketMQ 配置文件： */data/config/rocketmq*
 
-### RocketMQ-Console-Ng
+### RocketMQ-Console
 
-RocketMQ-Console-Ng 是一款可视化 RocketMQ 管理工具，在本项目中它基于 Docker 安装。  
+[RocketMQ-Console-NG ](https://github.com/apache/rocketmq-externals/tree/master/rocketmq-console) 是一款可视化 RocketMQ 管理工具，在本项目中它基于 Docker 安装。  
 
-安装目录：*/data/apps/rocketmq-console-ng*  
-Compose文件：*/data/apps/rocketmq-console-ng/docker-compose.yml* 
+RocketMQ-Console 安装目录：*/data/apps/rocketmq-console-ng*  
+RocketMQ-Console Compose文件：*/data/apps/rocketmq-console-ng/docker-compose.yml* 
 
 ### Docker
 
@@ -35,7 +35,7 @@ Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下�
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| TCP | 9876 | 通过 TCP/HTTP 访问 RocketMQ Broker Server | 必须 |
+| TCP | 9876 | RocketMQ Name Server | 必须 |
 | TCP | 9003 | 通过 HTTP 访问 RocketMQ-Console-Ng    | 可选 |
 
 ## 版本号
@@ -56,6 +56,5 @@ java -v
 docker -v
 
 # RocketMQ version
-ls /data/wwwroot/rocketmq/lib |grep rocketmq-broker
-
+ls /data/rocketmq/lib |grep rocketmq-broker
 ```
