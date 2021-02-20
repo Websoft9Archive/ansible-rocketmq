@@ -34,14 +34,16 @@ This chapter we will introduce a details for you how to use RocketMQ to send mes
 2. Use **SSH** to connect RocketMQ Server, run the following command to send message as producer.
    ```
    export NAMESRV_ADDR=localhost:9876
-   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+   cd /data/rocketmq/bin
+   sh tools.sh org.apache.rocketmq.example.quickstart.Producer
    ```
 
 3. You can see the feedback message *SendResult [sendStatus=SEND_OK, msgId= ...* when send successfully
 
 4. Run the following command to send message as consumer.
    ```
-   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
+   cd /data/rocketmq/bin
+   sh tools.sh org.apache.rocketmq.example.quickstart.Consumer
    ```
 5. You can see the feedback message *ConsumeMessageThread_%d Receive New Messages: [MessageExt...* when receive successfully
 
