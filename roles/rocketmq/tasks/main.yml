@@ -28,6 +28,13 @@
     line:  'JAVA_OPT="${JAVA_OPT} -server -Xms256m -Xmx256m -Xmn125m"'
     backrefs: yes   
 
+- name: Change sh to bash
+  replace:
+    path: /data/rocketmq/bin/mqnamesrv
+    regexp: 'sh.*'
+    replace: 'bash ${ROCKETMQ_HOME}/bin/runserver.sh org.apache.rocketmq.namesrv.NamesrvStartup $@'
+  when: ansible_os_family = "Debian"
+  
 - name: Configuration RocketMQ Name Server
   copy:
     src: mqnamesrv.service
