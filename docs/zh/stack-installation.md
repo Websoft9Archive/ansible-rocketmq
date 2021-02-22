@@ -35,14 +35,16 @@
 2. 使用 SSH 登录到 RocketMQ 服务器，运行下面命令，以发件人的身份发送消息
    ```
    export NAMESRV_ADDR=localhost:9876
-   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+   cd /data/rocketmq/bin
+   sh tools.sh org.apache.rocketmq.example.quickstart.Producer
    ```
 
 3. 发送成功会收到 *SendResult [sendStatus=SEND_OK, msgId= ...* 之类的反馈结果
 
 4. 在运行下面的命令，以收件人的身份接受消息
    ```
-   sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
+   cd /data/rocketmq/bin
+   sh tools.sh org.apache.rocketmq.example.quickstart.Consumer
    ```
 5. 接受成功会收到 *ConsumeMessageThread_%d Receive New Messages: [MessageExt...* 之类的反馈结果
 
