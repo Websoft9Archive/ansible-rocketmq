@@ -31,9 +31,9 @@
 - name: Change sh to bash,ubuntu default shell is dash,Syntax not supported
   replace:
     path: /data/rocketmq/bin/mqnamesrv
-    regexp: 'sh.*'
-    replace: 'bash ${ROCKETMQ_HOME}/bin/runserver.sh org.apache.rocketmq.namesrv.NamesrvStartup $@'
-  when: ansible_os_family = "Debian"
+    regexp: "^sh.*$"
+    replace: "bash ${ROCKETMQ_HOME}/bin/runserver.sh org.apache.rocketmq.namesrv.NamesrvStartup $@"
+  when: ansible_os_family == "Debian
   
 - name: Configuration RocketMQ Name Server
   copy:
