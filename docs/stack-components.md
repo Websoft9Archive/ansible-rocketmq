@@ -33,7 +33,7 @@ The following are the ports you may use:
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
-| TCP | 9003 | HTTP to access RocketMQ-Console-Ng | Required |
+| TCP | 9003 | HTTP to access RocketMQ-Console-Ng | Optional |
 | TCP | 9876 | RocketMQ Broker Server | Required |
 
 ## Version
