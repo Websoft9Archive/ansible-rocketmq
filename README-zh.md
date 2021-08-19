@@ -1,9 +1,9 @@
 
-# RabbitMQ 自动化安装与部署
+# RocketMQ 自动化安装与部署
 
 [English](/README.md) | [简体中文](/README-zh.md)  
 
-本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [RabbitMQ](http://rocketmq.apache.org/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 RabbitMQ，并预配置必要项，让原本复杂的安装和与配置过程变得没有任何技术门槛。
+本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [RocketMQ](http://rocketmq.apache.org/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 RocketMQ，并预配置必要项，让原本复杂的安装和与配置过程变得没有任何技术门槛。
 
 ## 配置要求
 
@@ -20,7 +20,7 @@
 
 ## 组件
 
-包含的核心组件为：RabbitMQ, RocketMQ-Console on Docker, Docker, Nginx  
+包含的核心组件为：RocketMQ, RocketMQ-Console on Docker, Docker, Nginx  
 
 更多请见: [参数表](/docs/zh/stack-components.md)。
 
@@ -29,7 +29,7 @@
 以 root 用户登录 Linux，运行下面的**一键自动化安装命令**即可启动自动化部署。若没有 root 用户，请以其他用户登录 Linux 后运行 `sudo su -` 命令提升为 root 权限，然后再运行下面的脚本。
 
 ```
-wget -N https://ghproxy.com/https://raw.githubusercontent.com/Websoft9/ansible-linux/main/scripts/install.sh; bash install.sh -r rabbitmq
+wget -N https://ghproxy.com/https://raw.githubusercontent.com/Websoft9/ansible-linux/main/scripts/install.sh; bash install.sh -r rocketmq
 ```
 
 脚本后启动，就开始了自动化安装，必要时需要用户做出交互式选择，然后耐心等待直至安装成功。
@@ -39,12 +39,12 @@ wget -N https://ghproxy.com/https://raw.githubusercontent.com/Websoft9/ansible-l
 1. 操作不慎或网络发生变化，可能会导致SSH连接被中断，安装就会失败，此时请重新安装
 2. 安装缓慢、停滞不前或无故中断，主要是网络不通（或网速太慢）导致的下载问题，此时请重新安装
 
-多种原因导致无法顺利安装，请使用我们在公有云上发布的 [RabbitMQ 镜像](https://apps.websoft9.com/rabbitmq) 的部署方式。
+多种原因导致无法顺利安装，请使用我们在公有云上发布的 [RocketMQ 镜像](https://apps.websoft9.com/rocketmq) 的部署方式。
 
 
 ## 文档
 
-文档链接：https://support.websoft9.com/docs/rabbitmq/zh
+文档链接：https://support.websoft9.com/docs/rocketmq/zh
 
 ## License
 
@@ -52,10 +52,10 @@ wget -N https://ghproxy.com/https://raw.githubusercontent.com/Websoft9/ansible-l
 
 ## FAQ
 
-#### 本项目安装的是 RabbitMQ 最新版吗？
+#### 本项目安装的是 RocketMQ 最新版吗？
 
-本项目通过包安装 | 下载源码编译安装 | 下载可执行二进制包解压安装，请通过[官方URL](http://rocketmq.apache.org/dowloading/releases/)页面查看版本号。  
-我们会定期检查[Release版本](https://github.com/Websoft9/ansible-rabbitmq/releases)，更新并测试此项目，以保证用户可以顺利安装所需的RabbitMQ版本。 
+本项目通过包安装，请通过[官方URL](http://rocketmq.apache.org/dowloading/releases/)页面查看版本号。  
+我们会定期检查[Release版本](https://github.com/Websoft9/ansible-rocketmq/releases)，更新并测试此项目，以保证用户可以顺利安装所需的RocketMQ版本。 
  
 #### 命令脚本部署与镜像部署有什么区别？
 

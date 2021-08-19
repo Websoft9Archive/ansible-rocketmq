@@ -1,4 +1,4 @@
-# RabbitMQ Cloud Installer
+# RocketMQ Cloud Installer
 
 ![](https://libs.websoft9.com/common/websott9-cloud-installer.png) 
 
@@ -6,7 +6,7 @@
 
 [English](/README.md) | [简体中文](/README-zh.md)  
 
-**RabbitMQ Cloud Installer**, developed by [Websoft9](https://www.websoft9.com), is an automatic installation program of [RabbitMQ](http://rocketmq.apache.org/) based on Ansible and shell. It helps user install RabbitMQ and pre-configure required items automatically and users only need to run a command on Linux. It simplifies the complicated installation and initialization process.  
+**RocketMQ Cloud Installer**, developed by [Websoft9](https://www.websoft9.com), is an automatic installation program of [RocketMQ](http://rocketmq.apache.org/) based on Ansible and shell. It helps user install RocketMQ and pre-configure required items automatically and users only need to run a command on Linux. It simplifies the complicated installation and initialization process.  
 
 ## System Requirement
 
@@ -23,7 +23,7 @@ To learn more information, please view [Installation & Configuration](http://roc
 
 ## Ecosystem
 
-Core components of this repository: RabbitMQ, RocketMQ-Console on Docker, Docker, Nginx
+Core components of this repository: RocketMQ, RocketMQ-Console on Docker, Docker, Nginx
 
 Learn more about [Parameters](/docs/stack-components.md).
 
@@ -37,18 +37,18 @@ Run the automatic installation script with **root** authority to start the insta
 
 ```
 $ sudo su -
-$ wget -N https://raw.githubusercontent.com/Websoft9/ansible-linux/main/scripts/install.sh; bash install.sh -r rabbitmq
+$ wget -N https://raw.githubusercontent.com/Websoft9/ansible-linux/main/scripts/install.sh; bash install.sh -r rocketmq
 ```
 
 If the network is broken or blocked, SSH will be interrupted and the installation will fail. Please reinstall.
 
 #### Image on Cloud 
 
-Follow our [RabbitMQ image](https://apps.websoft9.com/rabbitmq) for installation on major Cloud Platform.
+Follow our [RocketMQ image](https://apps.websoft9.com/rocketmq) for installation on major Cloud Platform.
 
 ## Documentation
 
-**[Administrator Guide](https://support.websoft9.com/docs/rabbitmq)** 
+**[Administrator Guide](https://support.websoft9.com/docs/rocketmq)** 
 
 ## License
 
@@ -62,8 +62,8 @@ This program provided by Websoft9 contains a series of software with separate co
 
 #### How to install and view the latest release?
 
-This repository install way is Package isntallation | Compile isntallation for source | Isntallation for download binaries files , you can  view the version from [Official URL](http://rocketmq.apache.org/dowloading/releases/).  
-We will check [Release version](https://github.com/Websoft9/ansible-rabbitmq/releases) regularly. Update and test this project to ensure that users can successfully install the required version of RabbitMQ.
+This repository install way is Package isntallation, you can  view the version from [Official URL](http://rocketmq.apache.org/dowloading/releases/).  
+We will check [Release version](https://github.com/Websoft9/ansible-rocketmq/releases) regularly. Update and test this project to ensure that users can successfully install the required version of RocketMQ.
 
 #### Can I run this repository on Ansible Tower? 
 
