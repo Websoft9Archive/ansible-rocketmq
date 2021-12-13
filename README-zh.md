@@ -14,7 +14,7 @@
 | 操作系统       | CentOS7.x, Ubuntu20.04, Amazon Linux2|  可选  |
 | 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 | 可选 |
 | 私有云|  KVM, VMware, VirtualBox, OpenStack | 可选 |
-| 服务器配置 | 最低1核2G，存储20GB以上，Swap分区2GB以上 |  建议采用按量100M带宽 |
+| 服务器配置 | 最低4核16G，存储20GB以上，Swap分区2GB以上 |  建议采用按量100M带宽 |
 
 更多请见： [官方 System requirement](http://rocketmq.apache.org/docs/quick-start/)。
 
