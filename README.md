@@ -17,7 +17,7 @@ System Requirement to install this repository are as following：
 | Operating System   | CentOS7.x, Ubuntu20.04, Amazon Linux2 | Optional                 |
 | Public Cloud     | AWS, Azure, Alibaba Cloud, HUAWEI ClOUD, Tencent Cloud    | Optional                 |
 | Private Cloud     | KVM, VMware, VirtualBox, OpenStack    | Optional                 |
-| Server Configuration | vCPU no less than 1 core, Memory no less than 2 GIB, Storage no less than 20 GB, Swap no less than 2GB |Bandwidth no less than 100M|
+| Server Configuration | vCPU no less than 4 core, Memory no less than 16 GIB, Storage no less than 20 GB, Swap no less than 2GB |Bandwidth no less than 100M|
 
 To learn more information, please view [Installation & Configuration](http://rocketmq.apache.org/docs/quick-start/).
 
