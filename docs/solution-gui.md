@@ -13,7 +13,7 @@ RocketMQ external project have Web-based GUI tool [RocketMQ-Console-NG ](https:/
 3. Set your language
    ![RocketMQ-Console language](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-language-websoft9.png)
 
-4. You can refer to official docs [UserGuide](https://github.com/apache/rocketmq-externals/blob/master/rocketmq-console/doc/1_0_0/UserGuide_CN.md) for more experience
+4. You can refer to official docs [UserGuide](https://github.com/apache/rocketmq-externals/blob/master/README.md) for more experience
    ![RocketMQ-Console-NG](https://libs.websoft9.com/Websoft9/DocsPicture/en/rocketmq/rocketmq-error-websoft9.png)
 
 ## FAQ
