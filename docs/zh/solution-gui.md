@@ -16,7 +16,7 @@ RocketMQ 扩展项目中提供了管理和监控 RocketMQ 的可视化工具：[
 
    ![RocketMQ-Console 语言设置](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rocketmq/rocketmq-language-websoft9.png)
 
-3. 接下来便可以在可视化界面查看驾驶舱、集群、消费者等信息（[参考](https://github.com/apache/rocketmq-externals/blob/master/rocketmq-console/doc/1_0_0/UserGuide_CN.md)官网文档）
+3. 接下来便可以在可视化界面查看驾驶舱、集群、消费者等信息（[参考](https://github.com/apache/rocketmq-externals/blob/master/docs/connect/cn/README.md)官网文档）
 
 
 ## 常见问题
